@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h1>
+    Welcome to white board
+  </h1>
+  <div *ngIf="courses.length > 0">
+    <h2>Course Enrolled:</h2>
+    <ul class="nav nav-tabs">
+      <li *ngFor="let course of courses"
+          class="nav-item">
+        <span class="list-group-item wbdv">{{course.title}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <app-course-grid></app-course-grid>
+  <a *ngIf="courses.length <= 0"routerLink="/login">Login</a>
+  <a *ngIf="courses.length > 0" routerLink="/profile">Profile</a>
+</div>
+
